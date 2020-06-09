@@ -2,21 +2,87 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Lato;
 }
 
 body {
-  display: flex;
-  flex-wrap: wrap;
-  overflow: auto;
+  position: relative;
+}
+
+#background-img-header {
+  position: relative;
+  height: 432px;
+  background: url('../images/header-background.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.gray-overlay {
+  /* add dark element over header image */
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+#background-img-header span {
+  position: absolute;
+  width: 100%;
+  bottom: 99px;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 48px;
+
+  color: #151515;
+  text-align: center;
+}
+
+/* addition to header */
+body nav.navbar {
+  position: absolute;
+  top: 64px;
+  z-index: 5;
+}
+/* end of additional header css */
+
+
+/* main page component */
+section {
+  padding: 86px;
+}
+
+section .title {
+  margin-bottom: 82px;
+}
+
+section .title h2 {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 43px;
+  text-transform: uppercase;
+  color: #084482;
+}
+
+section hr {
+  margin: 0 auto;
+  width: 42px;
+  height: 0px;
+
+  border: 3px solid #084482;
+}
+
+.show-rooms {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 388px));
+  grid-column-gap: 52px;
+  grid-row-gap: 82px;
+  justify-content: center;
 }
 
 .room {
   display: flex;
   flex-direction: column;
-  width: 388px;
-  min-width: 280px;
   height: 424px;
-  font-family: Lato;
   font-style: normal;
 }
 
@@ -24,10 +90,6 @@ body {
   display: flex;
   position: relative;
   width: 100%;
-}
-
-.room-header img {
-
 }
 
 .room-header div {
@@ -92,6 +154,10 @@ body {
 
 /* improve text on smaller viewports */
 @media only screen and (max-width: 400px) {
+  section {
+    padding: 2rem;
+  }
+
   .room {
     min-width: 10rem;
   }
@@ -117,3 +183,14 @@ body {
     width: 9rem;
   }
 }
+/* end of main page component styling */
+
+
+
+/* additional footer */
+footer {
+  width: unset !important;
+  height: unset !important;
+  min-height: 350px !important;
+}
+/* additional footer end */
